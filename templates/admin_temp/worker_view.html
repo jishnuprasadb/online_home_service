@@ -1,0 +1,119 @@
+{% extends 'admin_temp/admin_home.html' %}
+{% block content %}
+
+<main class="h-full pb-16 overflow-y-auto" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body">
+          <div class="container grid px-6 mx-auto">
+            <h2
+              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+            >
+              worker details
+            </h2>
+            <!-- CTA -->
+
+
+            <!-- With avatar -->
+
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">name</th>
+                      <th class="px-4 py-3">phone number</th>
+                      <th class="px-4 py-3">email</th>
+                      <th class="px-4 py-3">address</th>
+                      <th class="px-4 py-3">update</th>
+                      <th class="px-4 py-3">delete</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+                  {% for i in data %}
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.name}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.phone_number}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.email}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.address}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                                <a href="{% url 'workers_update' i.id %}">
+                            <button class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                  update
+
+                          </div>
+                        </div>
+                      </td>
+                       <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <form action="{% url 'worker_delete' i.id %}" method="post">{% csrf_token %}
+                            <button class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-md active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                  delete
+                            </form>
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+         </div>
+  </div>
+</main>
+
+
+{% endblock %}

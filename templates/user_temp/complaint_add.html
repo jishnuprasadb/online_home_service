@@ -1,0 +1,41 @@
+{% extends 'user_temp/user_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<main class="h-full pb-16 overflow-y-auto">
+          <div class="container px-6 mx-auto grid">
+            <h2
+              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+            >
+              complaint
+            </h2>
+            <!-- CTA -->
+
+
+            <!-- General elements -->
+            <form method="post">{% csrf_token %}
+            <div
+              class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
+            >
+                {{form|crispy}}
+            <button type="submit"
+                class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                href=""
+              >submit
+            </button>
+            </div>
+            </form>
+
+
+
+
+
+            <!-- Validation inputs -->
+
+
+            <!-- Inputs with buttons -->
+
+
+            </div>
+          </div>
+        </main>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'user_temp/user_home.html' %}
+{% block content %}
+
+<main class="h-full pb-16 overflow-y-auto" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body">
+          <div class="container grid px-6 mx-auto">
+            <h2
+              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+            >
+              work schedule
+            </h2>
+            <!-- CTA -->
+
+
+            <!-- With avatar -->
+
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">worker name</th>
+                      <th class="px-4 py-3">date</th>
+                       <th class="px-4 py-3">start time</th>
+                      <th class="px-4 py-3">end time</th>
+                        <th class="px-4 py-3">book appointment</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+                  {% for i in schedule %}
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.worker}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                              <p class="font-semibold">{{i.date}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                          <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                              <p class="font-semibold">{{i.start_time}}</p>
+
+                          </div>
+                      </td>
+                       <td>
+                          <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                              <p class="font-semibold">{{i.end_time}}</p>
+
+                          </div>
+                      </td>
+                        <td>
+                          <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                             <a href="{% url 'take_appointment' i.id %}"> <button type="button"
+                class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+
+              >book now
+                             </button></a>
+
+                          </div>
+                      </td>
+
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+         </div>
+  </div>
+</main>
+
+
+{% endblock %}

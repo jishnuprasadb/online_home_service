@@ -1,0 +1,112 @@
+{% extends 'admin_temp/admin_home.html' %}
+{% block content %}
+<main class="h-full pb-16 overflow-y-auto" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div class="card-body">
+          <div class="container grid px-6 mx-auto">
+            <h2
+              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+            >
+              feedback view
+            </h2>
+            <!-- CTA -->
+
+
+            <!-- With avatar -->
+
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">NAME</th>
+                      <th class="px-4 py-3">SUBJECT</th>
+                       <th class="px-4 py-3">FEEDBACK</th>
+                       <th class="px-4 py-3">DATE</th>
+                        <th class="px-4 py-3">REPLY</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+                  {% for i in feedback %}
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.user}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.subject}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.feedback}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{{i.date}}</p>
+
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+
+                          </div>
+                          <div>
+                            <p class="font-semibold">{% if i.reply == None %}
+                                <a href="{% url 'reply_feedback' i.id %}">Reply Now</a>
+                                {% else %}
+                                {{i.reply}}
+                                {% endif %}</p>
+
+                          </div>
+                        </div>
+                      </td>
+
+
+
+
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+         </div>
+  </div>
+</main>
+
+{% endblock %}
