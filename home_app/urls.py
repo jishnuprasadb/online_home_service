@@ -28,6 +28,7 @@ urlpatterns=[
     path('reply_feedback<int:id>/',admin_views.reply_feedback,name='reply_feedback'),
     path('bill_generate/',admin_views.bill_generate,name='bill_generate'),
     path('view_bill/',admin_views.view_bill,name='view_bill'),
+    path('admin_dashboard/',admin_views.admin_dashboard,name='admin_dashboard'),
 
 
 
@@ -42,6 +43,7 @@ urlpatterns=[
     path('bill_history/',user_views.bill_history,name='bill_history'),
     path('pay_bill<int:id>/',user_views.pay_bill,name='pay_bill'),
     path('pay_in_direct<int:id>/',user_views.pay_in_direct,name='pay_in_direct'),
+    path('user_dashboard/',user_views.user_dashboard,name='user_dashboard'),
 
 
     path('worker_home/',worker_views.worker_home,name='worker_home'),
@@ -50,7 +52,8 @@ urlpatterns=[
     path('schedule_view/', worker_views.schedule_view, name='schedule_view'),
     path('work_schedule/', worker_views.work_schedule, name='work_schedule'),
     path('schedule_update<int:id>/',worker_views.schedule_update,name='schedule_update'),
-    path('view_bill_worker/',worker_views.view_bill_worker,name='view_bill_worker')
+    path('view_bill_worker/',worker_views.view_bill_worker,name='view_bill_worker'),
+    path('worker_dashboard/',worker_views.worker_dashboard,name='worker_dashboard')
 
 
 ]

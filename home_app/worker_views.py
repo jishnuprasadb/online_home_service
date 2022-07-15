@@ -12,6 +12,11 @@ def worker_home(request):
 
 
 @login_required(login_url='login_view')
+def worker_dashboard(request):
+    return render(request, 'worker_temp/dashboard.html')
+
+
+@login_required(login_url='login_view')
 def work_schedule(request):
     form = ScheduleForm()
     if request.method == 'POST':

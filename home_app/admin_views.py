@@ -12,6 +12,11 @@ def admin_home(request):
 
 
 @login_required(login_url='login_view')
+def admin_dashboard(request):
+    return render(request, 'admin_temp/dashboard.html')
+
+
+@login_required(login_url='login_view')
 def worker_view(request):
     w = Worker.objects.all()
     context = {

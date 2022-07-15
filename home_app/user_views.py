@@ -12,6 +12,11 @@ def user_home(request):
 
 
 @login_required(login_url='login_view')
+def user_dashboard(request):
+    return render(request, 'user_temp/dashboard.html')
+
+
+@login_required(login_url='login_view')
 def view_workers_customer(request):
     data = Worker.objects.all()
     return render(request, 'user_temp/workers.html', {'data': data})
